@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Bangkok");
 
 function request($url, $data, $headers, $put = null)
 {
@@ -48,13 +49,12 @@ function regis()
     $sell5 = $json['sell_orders'][4]['sum_eth'];
     $totalbuy = $buy1 + $buy2 + $buy3 + $buy4 + $buy5;
     $totalsell = $sell1 + $sell2 + $sell3 + $sell4 + $sell5;
+    $d = date("H:i:s");
     if ($totalbuy > $totalsell) {
-        $pesan = "banyakan buy";
+        echo "\033[92m $d | $last | $totalbuy | $totalsell | buy\n";
     } else {
-        $pesan = "banyakan sell";
+        echo "\033[91m $d | $last | $totalbuy | $totalsell | sell\n";
     }
-
-    echo "$last | $totalbuy | $totalsell | $pesan\n";
 }
 
 for ($i = 0; $i < 999999; $i++) {
