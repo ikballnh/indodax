@@ -51,9 +51,9 @@ function regis()
     $totalsell = $sell1 + $sell2 + $sell3 + $sell4 + $sell5;
     $d = date("H:i:s");
     if ($totalbuy > $totalsell) {
-        echo "\033[92m $d | $last | $totalbuy | $totalsell | buy\n";
+        echo "\033[92m $d| $last | $totalbuy | $totalsell|buy\n";
     } else {
-        echo "\033[91m $d | $last | $totalbuy | $totalsell | sell\n";
+        echo "\033[91m $d| $last | $totalbuy | $totalsell|sell\n";
     }
 }
 
